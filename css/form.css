@@ -1,0 +1,86 @@
+html {
+    font-size: 62.5%; /* Sets up the Base 10 stuff */
+}
+
+
+body{
+    margin:3rem auto;
+    width:128rem;
+}
+
+fieldset{
+    margin:2rem;
+    border:none;
+}
+label{
+    font-size:1.6rem;
+    margin-right: .75rem;
+}
+label:after{
+    content:": ";
+}
+input{
+    font-size:1.6rem;
+    margin-right:1.5rem;
+}
+input:disabled{
+    border:none;
+}
+form.editable input{
+    border: 1px solid #e5e5e5;
+}
+
+ul#resume_list{
+    list-style-type: lower-latin;
+    counter-reset: section;
+    font-size:1.6rem;
+}
+ul li{
+    display: flex;
+    border:1px solid blanchedalmond;
+}
+li.titles{
+    flex-direction: row;
+    width: 75%;
+    margin-left: 2rem;
+    justify-content: space-between;
+
+}
+.column_title{
+    text-align: center;
+    width:45%;
+    font-size:1.8rem;
+    font-weight:bold;
+    margin-bottom:3.5rem;
+    border-bottom:1px solid rgba(0, 0, 0, .5);
+    padding-bottom: .5rem;
+}
+.column_title:first-child{
+    margin-right: 2%;
+    text-align: left;
+    padding-left: 2%;
+
+}
+li.resume {
+    flex-direction: row;
+    margin: 1rem 1rem 1rem 2rem;
+    align-content: space-between;
+    width: 75%;
+}
+li.resume:before {
+    counter-increment: section;               /* Increment the section counter*/
+    content: counter(section) ". " ; /* Display the counter */
+    margin-right: .5rem;
+
+}
+.resume_title{
+    margin-right:2rem;
+    width:50%;
+    white-space: pre;
+    align-self:flex-end;
+}
+
+.resume_date{
+    width:50%;
+    text-align: center;
+}
