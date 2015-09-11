@@ -14,19 +14,20 @@ $('button.cancel').on('click', function(event){
     return false
 });
 $('form').submit(function(event){
+    $('input').attr('disabled','disabled');
     event.preventDefault();
     var formData = $('form').serialize();
-    $('form').toggleClass('editing');
-    $('input').attr('disabled','disabled');
     $.ajax({
         type: 'POST',
-        url: $(form).attr('action'),
+        url: $('form').attr('action'),
         data: formData
     }).done(function(response){
         //show the success message
         $('.message_area.success').text("You successfully updated the information");
         $('.message_area.success').toggleClass('show_message').delay("1000").queue(function(){
             $(this).toggleClass("show_message").dequeue();
+            $('form').toggleClass('editing');
+            $('input').attr('disabled','disabled');
         });
 
     }).fail(function(data){
@@ -38,6 +39,8 @@ $('form').submit(function(event){
         $('.message_area.error').text = "You successfully updated the information";
         $('.message_area.error').toggleClass('show_message').delay("1000").queue(function(){
             $(this).toggleClass("show_message").dequeue();
+            $('form').toggleClass('editing');
+            $('input').attr('disabled','disabled');
         });
 
     })
