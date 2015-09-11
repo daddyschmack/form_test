@@ -8,9 +8,20 @@ body{
     width:128rem;
 }
 
+form{
+    display: flex;
+    justify-content: space-between;
+}
+input[type="submit"]{
+    display:none;
+}
+form.editable input{
+    border: 1px solid #e5e5e5;
+}
 fieldset{
     margin:2rem;
     border:none;
+    display: block;
 }
 label{
     font-size:1.6rem;
@@ -22,22 +33,62 @@ label:after{
 input{
     font-size:1.6rem;
     margin-right:1.5rem;
+    width: auto;
+    min-width: 2rem;
+}
+input#age{
+    width:3rem;
 }
 input:disabled{
     border:none;
 }
-form.editable input{
-    border: 1px solid #e5e5e5;
+
+.control_holder{
+    width:25%;
+    display: inline;
+    font-size:2.4rem;
+    flex-direction: row;
 }
 
+.edit,.cancel,.submit,.control_holder{
+    font-family: "FontAwesome";
+    padding:.75rem;
+    font-size:2.4rem;
+    background-color:transparent;
+    border:none;
+}
+.control_holder:before{
+    content: "\f040";
+    cursor:pointer;
+}
+form.editing{
+}
+form.editing  .control_holder:before{
+    content:"";
+}
+form  .cancel, form  .submit{
+    display:none;
+}
+form.editing  .cancel, form.editing  .submit{
+    display: inline-flex;
+}
+.submit:before{
+    content: "\f00c";
+    color:green;
+}
+.cancel:before{
+    content: "\f00d";
+    color:red;
+}
 ul#resume_list{
     list-style-type: lower-latin;
     counter-reset: section;
     font-size:1.6rem;
+    padding-left:0;
 }
 ul li{
     display: flex;
-    border:1px solid blanchedalmond;
+    margin-left:0;
 }
 li.titles{
     flex-direction: row;
@@ -83,4 +134,24 @@ li.resume:before {
 .resume_date{
     width:50%;
     text-align: center;
+}
+
+.show_message {
+    display: block;
+}
+.message_area{
+    font-size:2rem;
+    text-align: center;
+    width:100%;
+}
+.error{
+    display: none;
+    color:red;
+    text-align: center;
+    border:2px solid red;
+}
+.success{
+    display: none;
+    color: black;
+    border:1px solid green
 }

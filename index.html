@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="css/form.css" type="text/css">
 </head>
 <body>
+<div id="message_area">
+    <div class="success"> You succussfully submitted the form</div>
+    <div class="error"> The following error occurred submitting the form: </div>
+</div>
 <form id="contact_info">
     <fieldset id="contact_fieldset">
         <label for="last_name">Last Name</label>
@@ -16,14 +20,13 @@
         <input id="birthdate" value="01-01-1985" disabled placeholder="enter your birthday">
         <label for="age">Age</label>
         <input type="text" id="age" disabled value="30">
+        <div class="control_holder">
+            <button type="submit" class="submit"></button>
+            <button type="button" class="cancel"></button>
+            <input type="submit">
+        </div>
     </fieldset>
-    <div class="controls">
-        <ul class="controls">
-            <li class="edit"></li>
-            <li class="cancel"></li>
-        </ul>
-        <input type="submit">
-    </div>
+
 </form>
     <ul id="resume_list">
         <li class="titles">
@@ -47,9 +50,14 @@
             <div class="resume_date">07/09/2015</div>
         </li>
     </ul>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" rel="script" src="scripts/form.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        resume_form.load(this);
+    });
+</script>
 
 </body>
 
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="javascript" rel="script" src="scripts/form.js"></script>
