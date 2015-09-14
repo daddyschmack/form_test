@@ -5,7 +5,9 @@ html {
 
 body{
     margin:3rem auto;
-    width:128rem;
+}
+div.stage{
+    margin:0 3rem;
 }
 
 form{
@@ -23,6 +25,10 @@ fieldset{
     border:none;
     display: block;
 }
+fieldset > p{
+    display: inline-flex;
+    align-self: flex-start;
+}
 label{
     font-size:1.6rem;
     margin-right: .75rem;
@@ -35,9 +41,13 @@ input{
     margin-right:1.5rem;
     width: auto;
     min-width: 2rem;
+    margin-top:-3px;
 }
 input#age{
     width:3rem;
+}
+input#birthdate{
+    width:10rem
 }
 input:disabled{
     border:none;
@@ -49,27 +59,23 @@ input:disabled{
     font-size:2.4rem;
     flex-direction: row;
 }
-
-.edit,.cancel,.submit,.control_holder{
+.edit,.cancel,.submit,.control_holder {
     font-family: "FontAwesome";
-    padding:.75rem;
-    font-size:2.4rem;
-    background-color:transparent;
-    border:none;
+    padding: .75rem;
+    font-size: 2.4rem;
 }
 .control_holder:before{
     content: "\f040";
     cursor:pointer;
 }
-form.editing{
-}
+
 form.editing  .control_holder:before{
     content:"";
 }
-form  .cancel, form  .submit{
+form .cancel, form .submit{
     display:none;
 }
-form.editing  .cancel, form.editing  .submit{
+form.editing .cancel, form.editing .submit{
     display: inline-flex;
 }
 .submit:before{
@@ -89,34 +95,41 @@ ul#resume_list{
 ul li{
     display: flex;
     margin-left:0;
+    width:98%;
 }
 li.titles{
     flex-direction: row;
-    width: 75%;
     margin-left: 2rem;
     justify-content: space-between;
 
 }
 .column_title{
     text-align: center;
-    width:45%;
     font-size:1.8rem;
     font-weight:bold;
     margin-bottom:3.5rem;
     border-bottom:1px solid rgba(0, 0, 0, .5);
     padding-bottom: .5rem;
+    margin-left:2%;
 }
 .column_title:first-child{
     margin-right: 2%;
     text-align: left;
+    flex-basis:25%;
     padding-left: 2%;
 
+}
+.column_title:nth-child(2){
+    flex-basis:10%;
+}
+.column_title:last-child{
+    flex-basis:57%;
 }
 li.resume {
     flex-direction: row;
     margin: 1rem 1rem 1rem 2rem;
     align-content: space-between;
-    width: 75%;
+    /* width: 98%; */
 }
 li.resume:before {
     counter-increment: section;               /* Increment the section counter*/
@@ -126,16 +139,20 @@ li.resume:before {
 }
 .resume_title{
     margin-right:2rem;
-    width:50%;
+    flex:1 0 25%;
     white-space: pre;
-    align-self:flex-end;
+    display: inline-block;
+}
+li > div{
+    margin-left:2%;
 }
 
 .resume_date{
-    width:50%;
-    text-align: center;
+    flex:0 0 10%;
 }
-
+.resume_description{
+    flex:1 0 57%;
+}
 .show_message {
     display: block;
 }
@@ -154,4 +171,99 @@ li.resume:before {
     display: none;
     color: black;
     border:1px solid green
+}
+@media screen and (min-width:1025px) {
+
+    .edit,.cancel,.submit,.control_holder{
+        background-color:transparent;
+        border:none;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    fieldset#contact_fieldset{
+          display: block;
+    }
+    .control_holder{
+        margin-top:.5rem;
+        display: flex;
+        flex-direction: row;
+        width:auto;
+    }
+
+    .submit,.cancel{
+        font-family: sans-serif;
+        font-size:1.2rem;
+        font-size:1.2rem;
+    }
+    .submit:before{
+        content: "Save Changes";
+        color:green;
+    }
+    .cancel:before{
+        content: "Cancel";
+        color:red;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    ul#resume_list{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        border: 1px solid;
+    }
+    li.titles{
+        display:none
+    }
+    li.resume{
+        width: 31%;
+        display:flex;
+        flex-direction:column;
+        margin-right: .5rem;
+        margin-left: .5rem;
+    }
+    li.resume:before{
+        display: none;
+    }
+    li.resume div{
+        margin:.5rem 0;
+    }
+    .resume_description{
+        max-width:100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .resume_title:before{
+        content:"\f016";
+        font-family: FontAwesome;
+        display: inline-block;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    body {
+
+    }
+    ul#resume_list{
+        flex-direction: column;
+
+    }
+    li.resume{
+        width:100%
+    }
+    div.resume_description{
+        height: auto;
+        word-break: break-all;
+        word-wrap: break-word;
+        white-space: normal;
+        max-width: 97%;
+        overflow-y: visible ;
+        text-overflow: initial;
+    }
 }

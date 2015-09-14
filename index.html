@@ -5,21 +5,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/form.css" type="text/css">
 </head>
-<body>
+<div class="stage">
 <div id="message_area">
     <div class="success"> You succussfully submitted the form</div>
     <div class="error"> The following error occurred submitting the form: </div>
 </div>
 <form id="contact_info">
     <fieldset id="contact_fieldset">
-        <label for="last_name">Last Name</label>
+        <p><label for="last_name">Last Name</label>
         <input type="text" id="last_name" required disabled placeholder="Enter your last name" value="Smith">
-        <label for="first_name">First Name</label>
+            </p>
+       <p>
+           <label for="first_name">First Name</label>
         <input type="text" id="first_name" required disabled placeholder="Enter your first name" value="John">
-        <label for="birthdate">Birthday </label>
+       </p>
+        <p><label for="birthdate">Birthday </label>
         <input id="birthdate" value="01-01-1985" disabled placeholder="enter your birthday">
-        <label for="age">Age</label>
+        </p>
+        <p>
+            <label for="age">Age</label>
         <input type="text" id="age" disabled value="30">
+        </p>
         <div class="control_holder">
             <button type="submit" class="submit"></button>
             <button type="button" class="cancel"></button>
@@ -32,24 +38,31 @@
         <li class="titles">
             <div class="column_title">Title</div>
             <div class="column_title">Date Submitted</div>
+            <div class="column_title">Description</div>
         </li>
         <li id="resume_1" class="resume">
             <div class="resume_title">John's First Resume</div>
             <div class="resume_date">01/01/2015</div>
+            <div class="resume_description" title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </div>
         </li>
         <li id="resume_2" class="resume">
             <div class="resume_title">John's Second Resume</div>
             <div class="resume_date">06/01/2015</div>
+            <div class="resume_description" title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </div>
+
         </li>
         <li id="resume_3" class="resume">
             <div class="resume_title">John's Project Resume</div>
             <div class="resume_date">07/01/2015</div>
+            <div class="resume_description" title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </div>
         </li>
         <li id="resume_4" class="resume">
             <div class="resume_title">John's Functional Resume</div>
             <div class="resume_date">07/09/2015</div>
+            <div class="resume_description" title="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </div>
         </li>
     </ul>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script type="text/javascript" rel="script" src="scripts/form.js"></script>
 <script type="text/javascript">
