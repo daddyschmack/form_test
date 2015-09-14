@@ -139,9 +139,11 @@ li.resume:before {
 }
 .resume_title{
     margin-right:2rem;
-    flex:1 0 25%;
+    padding-right: 2rem;
+    flex: 0 0 25%;
     white-space: pre;
     display: inline-block;
+    /* border: 1px solid green; */
 }
 li > div{
     margin-left:2%;
@@ -220,17 +222,17 @@ li > div{
         display:none
     }
     li.resume{
-        width: 31%;
+        width: 29%;
         display:flex;
         flex-direction:column;
-        margin-right: .5rem;
-        margin-left: .5rem;
+        margin-right: 1.75rem;
+        margin-left: 1.25rem;
     }
     li.resume:before{
         display: none;
     }
     li.resume div{
-        margin:.5rem 0;
+        margin: .5rem 1.35rem;
     }
     .resume_description{
         max-width:100%;
@@ -250,20 +252,31 @@ li > div{
     body {
 
     }
-    ul#resume_list{
+
+    ul#resume_list {
         flex-direction: column;
 
     }
-    li.resume{
-        width:100%
+
+    li.resume {
+        width: 100%
     }
-    div.resume_description{
+
+    .resume_title {
+        flex: 0 0 35%;
+        white-space: pre;
+        display: inline-block;
+        border-top: 1px solid brown;
+    }
+
+    div.resume_description {
         height: auto;
         word-break: break-all;
         word-wrap: break-word;
         white-space: normal;
         max-width: 97%;
-        overflow-y: visible ;
-        text-overflow: initial;
+        overflow-y: visible;
+        text-overflow: initial;;
+        padding: 2rem;
     }
 }
