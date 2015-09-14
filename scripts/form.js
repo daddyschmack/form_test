@@ -26,7 +26,7 @@ $('form').submit(function(event){
         //show the success message
         $('#message_area .success').text("You successfully updated the information");
         $('#message_area .success').toggleClass('show_message').delay("1000").queue(function(){
-            //$(this).toggleClass("show_message").dequeue();
+            $(this).toggleClass("show_message").dequeue();
             $('form').toggleClass('editing');
             $('input').attr('disabled','disabled');
         });
