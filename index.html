@@ -12,20 +12,17 @@
 </div>
 <form id="contact_info">
     <fieldset id="contact_fieldset">
-        <p><label for="last_name">Last Name</label>
-        <input type="text" id="last_name" required disabled placeholder="Enter your last name" value="Smith">
-            </p>
-       <p>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" required disabled placeholder="Enter your last name" value="Smith">
+
            <label for="first_name">First Name</label>
-        <input type="text" id="first_name" required disabled placeholder="Enter your first name" value="John">
-       </p>
-        <p><label for="birthdate">Birthday </label>
-        <input id="birthdate" value="01-01-1985" disabled placeholder="enter your birthday">
-        </p>
-        <p>
+        <input type="text" id="first_name" name="first_name" required disabled placeholder="Enter your first name" value="John">
+     <label for="birthdate">Birthday </label>
+        <input id="birthdate" name="birthdate" value="01-01-1985" disabled placeholder="enter your birthday">
+
             <label for="age">Age</label>
-        <input type="text" id="age" disabled value="30">
-        </p>
+        <input type="text" id="age" name="age" disabled value="30">
+
         <div class="control_holder">
             <button type="submit" class="submit"></button>
             <button type="button" class="cancel"></button>

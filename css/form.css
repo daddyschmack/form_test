@@ -4,7 +4,7 @@ html {
 
 
 body{
-    margin:3rem auto;
+    margin: 1rem auto;
 }
 div.stage{
     margin:0 3rem;
@@ -146,23 +146,31 @@ li.resume:before {
     /* border: 1px solid green; */
 }
 li > div{
-    margin-left:2%;
+    margin-left: 2%;
 }
 
 .resume_date{
-    flex:0 0 10%;
+    flex: 0 0 10%;
 }
 .resume_description{
-    flex:1 0 57%;
+    flex: 1 0 54%;
 }
 .show_message {
-    display: block;
+    display: block !important;
 }
 .message_area{
     font-size:2rem;
     text-align: center;
     width:100%;
 }
+.success,.error{
+    padding:2rem 10rem;
+    width:80%;
+    margin:0 auto;
+    text-align: center;
+    font-size:2rem;
+}
+
 .error{
     display: none;
     color:red;
@@ -172,7 +180,7 @@ li > div{
 .success{
     display: none;
     color: black;
-    border:1px solid green
+    border:1px solid green;
 }
 @media screen and (min-width:1025px) {
 
